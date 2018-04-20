@@ -24,7 +24,6 @@ define trafficserver::remap::definefilter (
   # * name
   # * filter
     concat::fragment { "add ${name} filter to remap.config":
-      ensure  => $ensure,
       order   => 5,
       target  => $trafficserver::params::remap_config,
       content => template($trafficserver::params::definefilter_template),
